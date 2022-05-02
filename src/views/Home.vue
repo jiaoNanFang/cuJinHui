@@ -310,7 +310,7 @@
 </template>
 
 <script>
-   import Swiper from 'swiper'
+  import Swiper from 'swiper'
    import { Button,Calendar ,Input } from 'element-ui';
   export default {
     name: "Home",

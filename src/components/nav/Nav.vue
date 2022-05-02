@@ -1,7 +1,7 @@
 <template>
   <div class="navWarp">
     <nav>
-      <div :class="$route.name== item.meta? 'active nav_item':'nav_item'" v-for="(item,index) in navList" :key="index" @click.stop="handleClick(index,item.url)">
+      <div :class="$route.meta.id === item.meta? 'active nav_item':'nav_item'" v-for="(item,index) in navList" :key="index" @click.stop="handleClick(index,item.url)">
         <div class="item_title">{{item.name}}</div>
       </div>
     </nav>
@@ -16,12 +16,12 @@
         navList:[
           {
             name:'网站首页',
-            meta:'Home',
+            meta:1000,
             url:'/',
           },
           {
             name:'关于我们',
-            meta:'About',
+            meta:1001,
             url:'/about',
           },
           {
@@ -55,10 +55,7 @@
           this.$router.push({ path:url})
           return
         }
-        this.$router.push({ path:url+'/0'+'/'+1})
-      },
-      handlePushRouter(row,index){
-        this.$router.push({ path:row.router+'/'+index+'/'+2})
+        this.$router.push({ path:url+'/0'})
       }
     },
     mounted() {

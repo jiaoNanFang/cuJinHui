@@ -10,12 +10,25 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
       name: 'Home',
-      component:  () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
+      component:  () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+      meta: {
+        keepAlive: true,
+        id:1000
+      }
+    },
+    {
+      path: '/about/:id',
+      name: 'about',
+      component:  () => import(/* webpackChunkName: "about" */ '@/views/About/Index.vue'),
+      meta: {
+        keepAlive: true,
+        id:1001
+      }
     }
   ]
 })

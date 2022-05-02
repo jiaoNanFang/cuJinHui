@@ -1,0 +1,290 @@
+
+.About_{
+  .content {
+    width: 1200px
+    margin 0 auto
+    margin-bottom 40px
+    position relative
+    .crumbs{
+      font-size: 14px;
+      color: #999999;
+      line-height: 26px;
+      margin 10px 0
+    }
+    .About_wrap{
+      display flex
+      .nav_left{
+        width: 180px
+        margin-right 35px
+        .wrap_left{
+          position relative
+          top:0
+          left:0
+          background: #fff
+          position sticky
+          top:0
+          left:0
+          &.active{
+            position sticky
+            top:0
+            left:0
+          }
+          .navHeader{
+            width: 180px;
+            height: 65px;
+            background-color: rgba(0, 92, 161, 1);
+            display flex
+            align-items center
+            justify-content center
+            >img{
+              width: 25px
+              height: 30px
+              margin-right 10px
+            }
+            .card_{
+              >p{
+                font-weight: 700;
+                font-style: normal;
+                color: #FFFFFF;
+                font-size 18px
+              }
+              >span{
+                font-size: 14px;
+                color: #FFFFFF;
+              }
+            }
+          }
+          .navList{
+            .item_nav{
+              margin-top 10px
+              height: 50px
+              width: 180px
+              background-color: rgba(242, 242, 242, 1);
+              display flex
+              align-items center
+              justify-content center
+              cursor: pointer
+              font-weight: 700;
+              font-size: 16px;
+              color: #666666;
+              position relative
+              &:before{
+                content: ''
+                display none
+                width: 10px
+                height: 100%
+                background: #005CA1
+                position absolute
+                top: 0
+                left: 0
+              }
+              &.active{
+                color: #005CA1
+                &:before{
+                  display block
+                }
+              }
+            }
+          }
+
+        }
+
+      }
+      .content_right{
+        flex 1
+        .cz_about{
+          .navList{
+            display flex
+            justify-content space-between
+            .item{
+              width: 180px
+              height: 50px
+              background: #f2f2f2
+              line-height: 50px
+              text-align: center
+              font-size: 16px
+              color: #666
+              font-weight: 700
+              position relative
+              display flex
+              flex-direction column
+              align-items center
+              cursor: pointer
+              &:after{
+                opacity 0
+                content ''
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 20px 16px 0 16px;
+                border-color:  #f2f2f2 transparent transparent transparent;
+              }
+              &.active{
+                color: #fff
+                background: #005ca1
+                &:after{
+                  opacity 1
+                  border-color:  #005ca1 transparent transparent transparent;
+                }
+              }
+            }
+          }
+        }
+
+        .zz_about{
+          >img{
+            width: 100%
+          }
+        }
+        .fq_about{
+          .person_wrap{
+            display flex
+            flex-wrap wrap
+            .item{
+              display flex
+              flex-direction column
+              width: 250px
+              align-items center
+              margin-right 117px
+              margin-bottom 30px
+              &:nth-child(3n) {
+                margin-right 0
+              }
+              >img{
+                width: 180px
+                margin-bottom 18px
+              }
+              .name{
+                font-size: 24px
+                color: #333
+                font-weight: 700
+                margin-bottom 20px
+              }
+              .title{
+                display flex
+                flex-direction column
+                align-items center
+                >span{
+                  color: #333
+                  font-size: 14px
+                  margin-bottom 6px
+                  display block
+                  max-width 220px
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+        }
+        .ls_about{
+          .person_wrap{
+            display flex
+            flex-wrap wrap
+            .item{
+              display flex
+              flex-direction column
+              width: 250px
+              align-items center
+              margin-right 117px
+              margin-bottom 30px
+              &:nth-child(3n) {
+                margin-right 0
+              }
+              >img{
+                width: 180px
+                margin-bottom 18px
+              }
+              .name{
+                font-size: 24px
+                color: #333
+                font-weight: 700
+                margin-bottom 20px
+              }
+              .title{
+                display flex
+                flex-direction column
+                align-items center
+                >span{
+                  color: #333
+                  font-size: 14px
+                  margin-bottom 6px
+                  display block
+                  max-width 220px
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+        }
+        .js_about{
+          .person_wrap{
+            display flex
+            flex-wrap wrap
+            .item{
+              display flex
+              flex-direction column
+              width: 250px
+              align-items center
+              margin-right 117px
+              margin-bottom 30px
+              &:nth-child(3n) {
+                margin-right 0
+              }
+              >img{
+                width: 180px
+                margin-bottom 18px
+              }
+              .name{
+                font-size: 24px
+                color: #333
+                font-weight: 700
+                margin-bottom 20px
+              }
+              .title{
+                display flex
+                flex-direction column
+                align-items center
+                >span{
+                  color: #333
+                  font-size: 14px
+                  margin-bottom 6px
+                  display block
+                  max-width 220px
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+        }
+        .zs_about{
+          .person_wrap{
+            display flex
+            flex-wrap wrap
+            .item{
+              display flex
+              flex-direction column
+              width: 300px
+              height: 170px
+              margin-right 42.5px
+              margin-bottom 40px
+              &:nth-child(3n) {
+                margin-right 0
+              }
+              >img{
+                width: 300px
+                height: 170px
+                border:1px solid #eee
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
