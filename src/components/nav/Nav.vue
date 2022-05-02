@@ -26,8 +26,8 @@
           },
           {
             name:'新闻中心',
-            meta:'About',
-            url:'/about',
+            meta:1002,
+            url:'/news',
           },
           {
             name:'健康文化',

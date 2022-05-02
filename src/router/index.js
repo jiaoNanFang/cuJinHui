@@ -29,7 +29,25 @@ export default new Router({
         keepAlive: true,
         id:1001
       }
-    }
+    },
+    {
+      path: '/news/:id',
+      name: 'news',
+      component:  () => import(/* webpackChunkName: "News" */ '@/views/News/Index.vue'),
+      meta: {
+        keepAlive: true,
+        id:1002
+      },
+    },
+    {
+      path: '/news/show/:ids',
+      name: 'NewShow',
+      component: () => import(/* webpackChunkName: "NewShow" */ '@/views/News/Show'),
+      meta: {
+        keepAlive: true,
+        id:1002
+      },
+    },
   ]
 })
 
