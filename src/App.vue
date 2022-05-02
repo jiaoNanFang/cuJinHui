@@ -5,18 +5,21 @@
     <keep-alive>
       <router-view/>
     </keep-alive>
+    <Footer/>
   </div>
 </template>
 
 <script>
   import Header from './components/header/Header'
   import Nav from './components/nav/Nav'
+  import Footer from './components/footer/Footer'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Nav
+    Nav,
+    Footer
   },
 }
 </script>

@@ -306,8 +306,6 @@
       </section>
     </main>
 
-
-    <div style="width: 1px;height: 600px;"></div>
   </div>
 </template>
 
