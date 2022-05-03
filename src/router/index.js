@@ -23,7 +23,7 @@ export default new Router({
     },
     {
       path: '/about/:id',
-      name: 'about',
+      name: 'About',
       component:  () => import(/* webpackChunkName: "about" */ '@/views/About/Index.vue'),
       meta: {
         keepAlive: true,
@@ -32,7 +32,7 @@ export default new Router({
     },
     {
       path: '/news/:id',
-      name: 'news',
+      name: 'News',
       component:  () => import(/* webpackChunkName: "News" */ '@/views/News/Index.vue'),
       meta: {
         keepAlive: true,
@@ -50,11 +50,29 @@ export default new Router({
     },
     {
       path: '/culture/:id',
-      name: 'culture',
-      component: () => import(/* webpackChunkName: "News" */ '@/views/Culture/Index.vue'),
+      name: 'Culture',
+      component: () => import(/* webpackChunkName: "Culture" */ '@/views/Culture/Index.vue'),
       meta: {
         keepAlive: true,
         id: 1003
+      },
+    },
+    {
+      path: '/organization/:id',
+      name: 'Organization',
+      component: () => import(/* webpackChunkName: "Organization" */ '@/views/Organization/Index.vue'),
+      meta: {
+        keepAlive: true,
+        id: 1004
+      },
+    },
+    {
+      path: '/branch/:id',
+      name: 'Branch',
+      component: () => import(/* webpackChunkName: "Branch" */ '@/views/Branch/Index.vue'),
+      meta: {
+        keepAlive: true,
+        id: 1005
       },
     }
   ]

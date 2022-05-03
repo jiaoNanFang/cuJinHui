@@ -1,0 +1,233 @@
+
+.Organization_{
+  .content {
+    width: 1200px
+    margin 0 auto
+    margin-bottom 40px
+    position relative
+    .crumbs{
+      font-size: 14px;
+      color: #999999;
+      line-height: 26px;
+      margin 10px 0
+    }
+    .New_wrap{
+      display flex
+      .nav_left{
+        width: 180px
+        margin-right 35px
+        .wrap_left{
+          position relative
+          top:0
+          left:0
+          background: #fff
+          position sticky
+          top:0
+          left:0
+          &.active{
+            position sticky
+            top:0
+            left:0
+          }
+          .navHeader{
+            width: 180px;
+            height: 65px;
+            background-color: rgba(0, 92, 161, 1);
+            display flex
+            align-items center
+            justify-content center
+            >img{
+              width: 25px
+              height: 30px
+              margin-right 10px
+            }
+            .card_{
+              >p{
+                font-weight: 700;
+                font-style: normal;
+                color: #FFFFFF;
+                font-size 18px
+              }
+              >span{
+                font-size: 14px;
+                color: #FFFFFF;
+              }
+            }
+          }
+          .navList{
+            .item_nav{
+              margin-top 10px
+              height: 50px
+              width: 180px
+              background-color: rgba(242, 242, 242, 1);
+              display flex
+              align-items center
+              justify-content center
+              cursor: pointer
+              font-weight: 700;
+              font-size: 16px;
+              color: #666666;
+              position relative
+              &:before{
+                content: ''
+                display none
+                width: 10px
+                height: 100%
+                background: #005CA1
+                position absolute
+                top: 0
+                left: 0
+              }
+              &.active{
+                color: #005CA1
+                &:before{
+                  display block
+                }
+              }
+            }
+          }
+
+        }
+
+      }
+      .content_right{
+        flex 1
+        .yj_organization_{
+          .yj_content{
+            display flex
+            flex-wrap wrap
+            .item{
+              width: 220px
+              display flex
+              flex-direction column
+              align-items center
+              margin-right 35px
+              margin-bottom 40px
+              &:nth-child(4n){
+                margin-right 0
+              }
+              >img{
+                width: 128px
+                height:152px
+              }
+              .name{
+                font-size: 24px
+                font-weight: 700
+                color: #333
+                margin 20px 0 14px 0
+                max-width 220px
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+              .title{
+                display flex
+                flex-direction column
+                align-items center
+                >div{
+                  max-width 220px
+                  margin-bottom 10px
+                  font-size: 14px
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  &:last-child{
+                    margin-bottom 0
+                  }
+                }
+              }
+            }
+          }
+        }
+        .vip_organization_{
+          .vip_content{
+            display flex
+            flex-wrap: wrap
+            .vip_item{
+              width: 285px;
+              display flex
+              flex-direction column
+              align-items center
+              margin-right 65px
+              margin-bottom 30px
+              &:nth-child(3n){
+                margin-right 0
+              }
+              >img{
+                width: 285px;
+                height: 162px;
+                box-sizing border-box
+              }
+              .name{
+                font-size: 16px
+                color: #005CA1
+                font-weight: 700
+                margin 18px 0
+
+              }
+              .title{
+                padding 0 16px
+                line-height: 24px
+                color: #999
+                font-size: 14px
+                text-overflow: -o-ellipsis-lastline;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+              }
+            }
+          }
+        }
+        .zj_organization_{
+          .yj_content{
+            display flex
+            flex-wrap wrap
+            .item{
+              width: 220px
+              display flex
+              flex-direction column
+              align-items center
+              margin-right 35px
+              margin-bottom 40px
+              &:nth-child(4n){
+                margin-right 0
+              }
+              >img{
+                width: 128px
+                height:152px
+              }
+              .name{
+                font-size: 24px
+                font-weight: 700
+                color: #333
+                margin 20px 0 14px 0
+                max-width 220px
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+              .title{
+                display flex
+                flex-direction column
+                align-items center
+                >div{
+                  max-width 220px
+                  margin-bottom 10px
+                  font-size: 14px
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  &:last-child{
+                    margin-bottom 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

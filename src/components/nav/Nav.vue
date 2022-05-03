@@ -36,13 +36,13 @@
           },
           {
             name:'组织建设',
-            meta:'About',
-            url:'/about',
+            meta:1004,
+            url:'/organization',
           },
           {
             name:'分支机构',
-            meta:'About',
-            url:'/about',
+            meta:1005,
+            url:'/branch',
           },
         ],
         active:0,
