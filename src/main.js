@@ -12,7 +12,10 @@ Message.install = function (Vue, options) {
 }
 Vue.use(Message )//消息提示
 
-
+import VideoPlayer from 'vue-video-player'
+import'video.js/dist/video-js.css'
+import'vue-video-player/src/custom-theme.css'
+Vue.use(VideoPlayer)
 
 
 Vue.use(api)

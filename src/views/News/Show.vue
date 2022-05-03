@@ -3,6 +3,10 @@
     <div class="Show_title">
       <div class="header">慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
       <img src="../../assets/images/news/u1099.png" alt="">
+      <!--video-->
+      <div class="video_wrap">
+        <Video class="video_p" :videoUrl=src :videoPoster="poster"></Video>
+      </div>
       <div class="wrap">
         <p>北京健康文化促进会9月8日宣布成立，促进会将为推进北京健康文化建设提供服务，搭建北京健康文化活动平台，开展项目交流与合作，为首都的健康文化发展提供智库服务。</p>
         <p>北京健康文化促进会由市卫健委和市民政局批准成立，是由北京地区医疗卫生、宣传教育、文化艺术传媒等行业的工作者以及企（事）业单位自愿联合发起成立的非营利性社会团体。促进会立足于北京，秉持“政府主导，多部门合作，专业指导，社会广泛参与”的工作方针，坚持公共价值和公益责任，致力于向社会和人民提供优质健康文化服务，推动首都健康文化事业的发展。</p>
@@ -14,11 +18,16 @@
 </template>
 
 <script>
+  import Video from '../../components/video/index'
   export default {
     name: "NewsShow",
+    components:{
+      Video
+    },
     data() {
       return {
-
+        src:'http://vjs.zencdn.net/v/oceans.mp4',
+        poster:'https://b-gold-cdn.xitu.io/v3/static/img/bg.1f516b3.png',
       }
     },
     methods:{
@@ -37,7 +46,7 @@
       .header{
         font-weight: 700;
         font-style: normal;
-        font-size: 16px;
+        font-size: 24px;
         color: #005CA1;
         line-height: 24px;
         text-align: center
@@ -52,10 +61,17 @@
         display block
         margin 20px auto
       }
+      .video_wrap{
+        margin  20px 0 80px 0
+        .video_p{
+          width: 814px;
+          height: 425px;
+        }
+      }
       .wrap{
         margin-bottom 80px
         >p{
-          font-size: 14px;
+          font-size: 16px;
           color: #999999;
           line-height: 24px;
           text-indent 2em
