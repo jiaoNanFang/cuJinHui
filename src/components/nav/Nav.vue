@@ -31,8 +31,8 @@
           },
           {
             name:'健康文化',
-            meta:'About',
-            url:'/about',
+            meta:1003,
+            url:'/culture',
           },
           {
             name:'组织建设',

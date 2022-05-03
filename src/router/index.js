@@ -48,6 +48,15 @@ export default new Router({
         id:1002
       },
     },
+    {
+      path: '/culture/:id',
+      name: 'culture',
+      component: () => import(/* webpackChunkName: "News" */ '@/views/Culture/Index.vue'),
+      meta: {
+        keepAlive: true,
+        id: 1003
+      },
+    }
   ]
 })
 
