@@ -1,7 +1,7 @@
 <template>
   <div class="About_">
     <main class="content">
-      <div class="crumbs">当前所在页面：首页>关于慈诚>{{navList[$route.params.id].name}}</div>
+      <div class="crumbs">当前所在页面：首页>关于我们>{{navList[$route.params.id].name}}</div>
       <div class="About_wrap">
         <div class="nav_left">
           <div class=" wrap_left">

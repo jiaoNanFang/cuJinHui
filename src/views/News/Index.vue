@@ -1,7 +1,7 @@
 <template>
   <div class="New_">
     <main class="content">
-      <div class="crumbs">当前所在页面：首页>{{navList[$route.params.id].name}}</div>
+      <div class="crumbs">当前所在页面：首页>新闻中心>{{navList[$route.params.id].name}}</div>
       <div class="New_wrap">
         <div class="nav_left">
           <div class=" wrap_left">
