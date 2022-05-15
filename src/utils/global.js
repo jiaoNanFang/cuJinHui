@@ -6,8 +6,8 @@
  */
 
 // 本地
-// export const baseUrl ='api'
-export const baseUrl ='http://39.102.74.211:8082/'
+export const baseUrl ='api'
+// export const baseUrl ='http://39.102.74.211:8082/'
 // export const baseUrl ='//www.onlinekepu.com/web/api'
 // 系统数据备份还原服务器地址
 export const backupBaseUrl = ''
