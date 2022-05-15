@@ -22,74 +22,26 @@
           <section class="cjh_news" v-show="$route.params.id == 0 || $route.params.id == undefined ">
             <div style="width: 100%;height: 1px;background: #BCBCBC; margin-bottom: 30px"></div>
             <div class="content_right">
-              <div class="news_header">
-                <img src="../../assets/images/news/u977.png" alt="">
+              <div class="news_header" v-if="newsData.length">
+                <img :src="newsData[0].picture" alt="">
                 <div class="header_text">
-                  <div class="title" @click="handleShow(5)">北京健康文化促进会成立并召开第一次会员大会</div>
-                  <p>北京健康文化促进会9月8日宣布成立，促进会将为推进北京健康文化建设提供服务，搭建北京健康文化活动平台，
-                    开展项目交流与合作，为首都的健康文化发展提供智库服务。北京健康文化促进会由市卫健委和市民政局批准成立，
-                    是由北京地区医疗卫生、宣传教育、文化艺术传媒等行业的工作者以及企（事）业单位自愿联合发起成立的非营利性社会团体。………… </p>
+                  <div class="title" @click="handleShow(newsData[0].id)">{{newsData[0].title}}</div>
+                  <p>{{newsData[0].artical}}</p>
                   <div class="list">
-                    <div class="item_text">
-                      <div @click="handleShow(5)">慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                      <p>2021-5-1</p>
-                    </div>
-                    <div class="item_text">
-                      <div @click="handleShow(5)">慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                      <p>2021-5-1</p>
-                    </div>
-                    <div class="item_text">
-                      <div @click="handleShow(5)">慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                      <p>2021-5-1</p>
+                    <div class="item_text" v-for="(item,index) in newsData" :key="item.id">
+                      <div v-if="index>0&&index<4">
+                        <div @click="handleShow(item.id)">{{item.title}}</div>
+                        <p>{{item.uploadTime}}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="news_pagination">
                 <div class="text_list">
-                  <div class="item_text">
-                    <div @click="handleShow(5)">• 慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div @click="handleShow(5)">慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div @click="handleShow(5)">慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div @click="handleShow(5)">慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div>慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div>慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div>慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div>慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div>慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div>慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
-                  </div>
-                  <div class="item_text">
-                    <div>慈诚医疗与德州市第七人民医院举行战略合作签约仪式</div>
-                    <p>2021-5-1</p>
+                  <div class="item_text" v-for="item in newsData" :key="item.id">
+                    <div @click="handleShow(item.id)">{{item.title}}</div>
+                    <p>{{item.uploadTime}}</p>
                   </div>
                 </div>
                 <div style="padding-top: 20px">
@@ -117,18 +69,18 @@
           {
             name:'促进会新闻'
           },
-          {
-            name:'媒体报道'
-          },
-          {
-            name:'项目动态'
-          },
-          {
-            name:'最新公告'
-          },
-          {
-            name:'对外交流'
-          },
+          // {
+          //   name:'媒体报道'
+          // },
+          // {
+          //   name:'项目动态'
+          // },
+          // {
+          //   name:'最新公告'
+          // },
+          // {
+          //   name:'对外交流'
+          // },
         ],
         active: 0,
         flagScroll: false,
@@ -136,8 +88,10 @@
         total:1,
         dataForm:{
           page:1,
-          size:10
-        }
+          size:14
+        },
+        newsData:[],
+        TopData:[],
       }
     },
     methods: {
@@ -149,16 +103,35 @@
         this.switchId = index
       },
       handleJumpPage(e){
-        console.log(e);
+        this.dataForm.page = e
+        this.getNewList()
       },
       handleShow(e) {
         this.$router.push({ path:`/news/show/${e}`})
-      }
+      },
+      // 获取新闻内容
+      getNewList() {
+        let params = Object.assign({},this.dataForm)
+        this.$api.home.findListContents(params) .then(res => {
+          if(res.code != '000000') {
+            this.$message.error(res.message)
+            return
+          }
+          this.newsData = res.infos.list
+          this.total =Math.ceil(res.infos.total/this.dataForm.size)
+        })
+      },
+    },
+    computed:{
+      top() {
+        return this.newsData[0]
+      },
     },
     mounted() {
 
     },
     activated() {
+      this.getNewList()
     },
     deactivated() {
     },

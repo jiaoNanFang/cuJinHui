@@ -21,67 +21,11 @@
           <!--会员-->
           <section class="vip_Branch" v-show="$route.params.id == 0 | $route.params.id == undefined">
             <div class="vip_content">
-              <div class="vip_item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
+              <div class="vip_item" v-for="item in InstitutionData" :key="item.id">
+                <img :src="item.institutionImg" alt="">
+                <div class="name">{{item.institutionName}}</div>
                 <div class="title">
-                  这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍
-                </div>
-              </div>
-              <div class="vip_item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍
-                </div>
-              </div>
-              <div class="vip_item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍
-                </div>
-              </div>
-              <div class="vip_item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍
-                </div>
-              </div>
-              <div class="vip_item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍
-                </div>
-              </div>
-              <div class="vip_item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍
-                </div>
-              </div>
-              <div class="vip_item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍
-                </div>
-              </div>
-              <div class="vip_item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍
-                </div>
-              </div>
-              <div class="vip_item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍这里是会员单位的相关介绍
+                  {{item.institutionIntroduce}}
                 </div>
               </div>
             </div>
@@ -116,8 +60,9 @@
         total:1,
         dataForm:{
           page:1,
-          size:10
-        }
+          size:9
+        },
+        InstitutionData:[],
       }
     },
     methods: {
@@ -125,13 +70,28 @@
         this.$router.push({path: `/branch/${index}`})
       },
       handleJumpPage(e){
-        console.log(e);
+        this.dataForm.page = e
+        this.getInstitution()
+      },
+      // 获取机构
+      getInstitution() {
+        let params = Object.assign({},this.dataForm)
+        this.$api.home.findInstitution(params) .then(res => {
+          if(res.code != '000000') {
+            this.$message.error(res.message)
+            return
+          }
+          this.InstitutionData = res.infos.list
+          this.total =Math.ceil(res.infos.total/this.dataForm.size)
+
+        })
       },
     },
     mounted() {
 
     },
     activated() {
+      this.getInstitution()
     },
     deactivated() {
     },

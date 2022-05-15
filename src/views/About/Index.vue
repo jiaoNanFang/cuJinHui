@@ -27,6 +27,7 @@
               <div :class="switchId === 3? 'item active' : 'item' " @click="handleSwitch(3)">促进会宗旨</div>
               <div :class="switchId === 4? 'item active' : 'item' " @click="handleSwitch(4)">业务范围</div>
             </div>
+            <img style="width: 350px; display: block; margin: 20px auto" src="../../assets/images/home/empty.png" alt="">
           </section>
           <!--组织机构-->
           <section class="zz_about" v-show="$route.params.id == 1 ">
@@ -42,94 +43,11 @@
           <section class="fq_about" v-show="$route.params.id == 3 ">
             <div style="width: 100%;height: 1px;background: #BCBCBC; margin-bottom: 30px"></div>
             <div class="person_wrap">
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
+              <div class="item" v-for="item in sponsorData" :key="item.id">
+                <img :src="item.profilePhoto" alt="">
+                <div class="name">{{item.name}}</div>
                 <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
+                  <span>{{item.occupationName}}</span>
                 </div>
               </div>
             </div>
@@ -138,94 +56,11 @@
           <section class="ls_about" v-show="$route.params.id == 4 ">
             <div style="width: 100%;height: 1px;background: #BCBCBC; margin-bottom: 30px"></div>
             <div class="person_wrap">
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
+              <div class="item" v-for="item in liShiData" :key="item.id">
+                <img :src="item.profilePhoto" alt="">
+                <div class="name">{{item.name}}</div>
                 <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
+                  <span>{{item.occupationName}}</span>
                 </div>
               </div>
             </div>
@@ -234,94 +69,11 @@
           <section class="js_about" v-show="$route.params.id == 5 ">
             <div style="width: 100%;height: 1px;background: #BCBCBC; margin-bottom: 30px"></div>
             <div class="person_wrap">
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
+              <div class="item"  v-for="item in jianShiData" :key="item.id">
+                <img :src="item.profilePhoto" alt="">
+                <div class="name">{{item.name}}</div>
                 <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
-                </div>
-              </div>
-              <div class="item">
-                <img src="../../assets/images/about/doctor.png" alt="">
-                <div class="name">张三三</div>
-                <div class="title">
-                  <span>北京协和医院原党委书记、副院长</span>
-                  <span>国务院政府特殊津贴专家</span>
-                  <span>北京医师协会原会长</span>
-                  <span>中国医师协会副会长</span>
+                  <span>{{item.occupationName}}</span>
                 </div>
               </div>
             </div>
@@ -329,7 +81,8 @@
           <!--资质证书-->
           <section class="zs_about" v-show="$route.params.id == 6 ">
             <div style="width: 100%;height: 1px;background: #BCBCBC; margin-bottom: 30px"></div>
-            <div class="person_wrap">
+            <img style="width: 350px; display: block; margin: 0 auto" src="../../assets/images/home/empty.png" alt="">
+            <div class="person_wrap" v-if="0">
               <div class="item">
                 <img src="../../assets/images/about/doctor.png" alt="">
               </div>
@@ -386,7 +139,10 @@
         ],
         active: 0,
         flagScroll: false,
-        switchId:1
+        switchId:1,
+        sponsorData:[],
+        liShiData:[],
+        jianShiData:[],
       }
     },
     methods: {
@@ -396,12 +152,60 @@
       // 协会简介切换
       handleSwitch(index) {
         this.switchId = index
-      }
+      },
+      // 获取发起人
+      getPersonList() {
+        let params = {
+          page:1,
+          size:9,
+          functionalId:1
+        }
+        this.$api.home.findListPerson(params) .then(res => {
+          if(res.code != '000000') {
+            this.$message.error(res.message)
+            return
+          }
+          this.sponsorData = res.infos.list
+        })
+      },
+      // 获取理事会
+      getLiShiList() {
+        let params = {
+          page:1,
+          size:9,
+          functionalId:2
+        }
+        this.$api.home.findListPerson(params) .then(res => {
+          if(res.code != '000000') {
+            this.$message.error(res.message)
+            return
+          }
+          this.liShiData = res.infos.list
+        })
+      },
+      // 获取监事会
+      getJianShiList() {
+        let params = {
+          page:1,
+          size:9,
+          functionalId:3
+        }
+        this.$api.home.findListPerson(params) .then(res => {
+          if(res.code != '000000') {
+            this.$message.error(res.message)
+            return
+          }
+          this.jianShiData = res.infos.list
+        })
+      },
     },
     mounted() {
 
     },
     activated() {
+      this.getPersonList()
+      this.getLiShiList()
+      this.getJianShiList()
     },
     deactivated() {
     },

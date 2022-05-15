@@ -19,7 +19,8 @@
         </div>
         <div  class="content_right">
           <!--理论研究-->
-          <section class="yj_culture" v-show="$route.params.id == 0 || $route.params.id == undefined ">
+          <section class="yj_culture" v-if="$route.params.id == 0 || $route.params.id == undefined ">
+
             <div style="width: 100%;height: 1px;background: #BCBCBC; margin-bottom: 30px"></div>
             <img class="bg_img" src="../../assets/images/culture/u1201.png" alt="">
             <div class="content_wrap">
@@ -30,6 +31,8 @@
                 文化艺术传媒等行业的工作者以及企（事）业单位自愿联合发起成立的非营利性社会团体</p>
             </div>
           </section>
+          <img v-else style="width: 350px; display: block; margin: 20px auto" src="../../assets/images/home/empty.png" alt="">
+
         </div>
       </div>
     </main>

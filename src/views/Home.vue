@@ -6,14 +6,8 @@
         <!--轮播-->
         <div id="bigOne_swiper" class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="../assets/images/home/1000.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img src="../assets/images/home/1000.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img src="../assets/images/home/1000.jpg" alt="">
+            <div class="swiper-slide" v-for="item in swiperData" :key="item.id">
+              <img :src="item.picture" alt="">
             </div>
           </div>
         </div>
@@ -22,38 +16,14 @@
           <div class="bulletin_title">
             <div class="title">
               <div class="txt">新闻公告</div>
-              <div class="btn_right" @click="$router.push({ path:'/'})">MORE >>></div>
+              <div class="btn_right" @click="$router.push({ path:'/news/0'})">MORE >>></div>
             </div>
           </div>
           <div class="bulletin_content">
             <ul class="bulletin_list">
-              <li class="item">
-                <div class="title">北京健康文化促进会成立并召开第一次会员大会</div>
-                <time class="time">2022-2-1</time>
-              </li>
-              <li class="item">
-                <div class="title">北京健康文化促进会成立并召开第一次会员大会</div>
-                <time class="time">2022-2-1</time>
-              </li>
-              <li class="item">
-                <div class="title">北京健康文化促进会成立并召开第一次会员大会</div>
-                <time class="time">2022-2-1</time>
-              </li>
-              <li class="item">
-                <div class="title">北京健康文化促进会成立并召开第一次会员大会</div>
-                <time class="time">2022-2-1</time>
-              </li>
-              <li class="item">
-                <div class="title">北京健康文化促进会成立并召开第一次会员大会</div>
-                <time class="time">2022-2-1</time>
-              </li>
-              <li class="item">
-                <div class="title">北京健康文化促进会成立并召开第一次会员大会</div>
-                <time class="time">2022-2-1</time>
-              </li>
-              <li class="item">
-                <div class="title">北京健康文化促进会成立并召开第一次会员大会</div>
-                <time class="time">2022-2-1</time>
+              <li class="item" v-for="item in newsData" :key="item.id" @click="handleShow(item.id)">
+                <div class="title">{{item.title}}</div>
+                <time class="time">{{item.uploadTime}}</time>
               </li>
             </ul>
           </div>
@@ -69,7 +39,7 @@
           <div class="divider">
             <div class="mask"></div>
             <div class="advantage"></div>
-            <div class="btn_right" @click="$router.push({ path:'/'})">MORE>>>></div>
+            <div class="btn_right" @click="$router.push({ path:'/about/0'})">MORE>>>></div>
           </div>
         </div>
         <p style="cursor: pointer;" class="home_text" @click="$router.push({ path:'/'})">北京健康文化促进会由市卫健委和市民政局批准成立，是由北京地区医疗卫生、宣传教育、文化艺术传媒等行业的工作者以及企（事）业单位自愿联合发起成立的非营利性社会团体。促进会立足于北京，秉持“政府主导，多部门合作，专业指导，社会广泛参与”的工作方针，坚持公共价值和公益责任，致力于向社会和人民提供优质健康文化服务，推动首都健康文化事业的发展。</p>
@@ -84,17 +54,14 @@
             <div id="fameDoctor_swiper" class="swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="(item_s,index) in num" :key="index">
-                  <div class="swiper_listBox"  v-for="(item,indexs) in doctorData " :key="item.doctorId"  v-if="indexs>=index*4 && indexs <(index+1)*4">
+                  <div class="swiper_listBox"  v-for="(item,indexs) in sponsorData " :key="item.id"  v-if="indexs>=index*4 && indexs <(index+1)*4">
                     <!--上-->
                     <div class="slide_top">
-                      <img :src="item.headImage" alt="">
+                      <img :src="item.profilePhoto" alt="">
                     </div>
-                    <div class="name">哈哈哈哈哈</div>
+                    <div class="name">{{item.name}}</div>
                     <div class="person_title">
-                      <p>北京协和医院原党委书记、副院长</p>
-                      <p>国务院政府特殊津贴专家</p>
-                      <p>北京医师协会原会长</p>
-                      <p>中国医师协会副会长</p>
+                      <p>{{item.occupationName}}</p>
                     </div>
                   </div>
                 </div>
@@ -113,7 +80,7 @@
           <div class="divider">
             <div class="mask"></div>
             <div class="advantage"></div>
-            <div class="btn_right" @click="$router.push({ path:'/'})">MORE>>>></div>
+            <div class="btn_right" @click="$router.push({ path:'/culture/0'})">MORE>>>></div>
           </div>
         </div>
         <div class="service_list">
@@ -234,22 +201,22 @@
           <div class="divider">
             <div class="mask"></div>
             <div class="advantage"></div>
-            <div class="btn_right" @click="$router.push({ path:'/'})">MORE>>>></div>
+            <div class="btn_right" @click="$router.push({ path:'/organization/0'})">MORE>>>></div>
           </div>
         </div>
         <!--轮播-->
         <div class="organization_sw">
           <div id="organization_swiper" class="swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" v-for="(item_s,index) in num" :key="index">
-                <div class="swiper_listBox"  v-for="(item,indexs) in doctorData " :key="item.doctorId"  v-if="indexs>=index*4 && indexs <(index+1)*4">
+              <div class="swiper-slide" v-for="(item_s,index) in organizationNum" :key="index">
+                <div class="swiper_listBox"  v-for="(item,indexs) in InstitutionData " :key="item.id"  v-if="indexs>=index*4 && indexs <(index+1)*4">
                   <!--上-->
                   <div class="slide_top">
-                    <img :src="item.headImage" alt="">
+                    <img :src="item.institutionImg" alt="">
                   </div>
-                  <div class="name">哈哈哈哈哈</div>
+                  <div class="name">{{item.institutionName}}</div>
                   <div class="person_title">
-                    这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分
+                    {{item.institutionIntroduce}}
                   </div>
                 </div>
               </div>
@@ -279,23 +246,21 @@
           <div class="divider">
             <div class="mask"></div>
             <div class="advantage"></div>
-            <div class="btn_right" @click="$router.push({ path:'/'})">MORE>>>></div>
+            <div class="btn_right" @click="$router.push({ path:'/branch/0'})">MORE>>>></div>
           </div>
         </div>
         <!--轮播-->
         <div class="branch_sw">
           <div id="branch_swiper" class="swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" v-for="(item_s,index) in num" :key="index">
-                <div class="swiper_listBox"  v-for="(item,indexs) in doctorData " :key="item.doctorId"  v-if="indexs>=index*3 && indexs <(index+1)*3">
+              <div class="swiper-slide" v-for="(item_s,index) in InstitutionNum" :key="index">
+                <div class="swiper_listBox"  v-for="(item,indexs) in InstitutionData " :key="item.id"  v-if="indexs>=index*3 && indexs <(index+1)*3">
                   <!--上-->
                   <div class="slide_top">
-                    <img :src="item.headImage" alt="">
+                    <img :src="item.institutionImg" alt="">
                   </div>
-                  <div class="name">哈哈哈哈哈</div>
-                  <div class="person_title">
-                    这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分会简介这里是分
-                  </div>
+                  <div class="name">{{item.institutionName}}</div>
+                  <div class="person_title">{{item.institutionIntroduce}}</div>
                 </div>
               </div>
             </div>
@@ -313,7 +278,6 @@
   import Swiper from 'swiper'
    import { Button,Calendar ,Input } from 'element-ui';
   export default {
-    name: "Home",
     components:{
       Button,
       Calendar,
@@ -322,7 +286,12 @@
     data() {
       return {
         num:[],
-        doctorData:[],
+        swiperData:[],
+        newsData:[],
+        sponsorData:[],
+        InstitutionData:[],
+        InstitutionNum:null,
+        organizationNum:null,
       }
     },
     methods:{
@@ -407,30 +376,92 @@
           },
         })
       },
-      getDoctorList() {
+
+      // 获取新闻内容
+      getNewList() {
         let params = {
           page:1,
-          size:10,
+          size:7,
         }
-        this.$api.home.findDoctorTree(params) .then(res => {
-          if(res.code == '000000') {
-            this.doctorData = res.infos.list
-            this.num = Math.ceil(res.infos.list.length/5)
-            this.$nextTick(() => {
-              this._initFameAboutSwiper()
-              this._initOrganizationSwiper()
-              this._initBranchSwiper()
-            })
+        this.$api.home.findListContents(params) .then(res => {
+          if(res.code != '000000') {
+            this.$message.error(res.message)
+            return
           }
+          this.newsData = res.infos.list
         })
       },
+      // 获取轮播内容
+      getSwiperList() {
+        let params = {
+          page:1,
+          size:5,
+          state :1
+        }
+        this.$api.home.findListContents(params) .then(res => {
+          if(res.code != '000000') {
+            this.$message.error(res.message)
+            return
+          }
+          this.swiperData = res.infos.list
+          this.$nextTick(() => {
+            this._initSwiper()
+          })
+        })
+      },
+      // 获取发起人
+      getPersonList() {
+        let params = {
+          page:1,
+          size:12,
+          functionalId:1
+        }
+        this.$api.home.findListPerson(params) .then(res => {
+          if(res.code != '000000') {
+            this.$message.error(res.message)
+            return
+          }
+          this.sponsorData = res.infos.list
+          this.num =  Math.ceil(this.sponsorData.length/4)
+          this.$nextTick(() => {
+            this._initFameAboutSwiper()
+          })
+        })
+      },
+      // 获取机构
+      getInstitution() {
+        let params = {
+          page:1,
+          size:12
+        }
+        this.$api.home.findInstitution(params) .then(res => {
+          if(res.code != '000000') {
+            this.$message.error(res.message)
+            return
+          }
+          this.InstitutionData = res.infos.list
+          this.InstitutionNum =  Math.ceil(this.InstitutionData.length/3)
+          this.organizationNum =  Math.ceil(this.InstitutionData.length/4)
+          this.$nextTick( () => {
+            this._initOrganizationSwiper()
+            this._initBranchSwiper()
+          })
+        })
+      },
+      handleShow(e) {
+        this.$router.push({ path:`/news/show/${e}`})
+      }
     },
-    mounted() {
-      this._initSwiper()
-      this.getDoctorList()
-      this.$api.home.findInstitution((res) => {
-        console.log(res);
-      })
+    activated() {
+      // this.getDoctorList()
+      // this.$api.home.findInstitution((res) => {
+      //   console.log(res);
+      // })
+
+      this.getSwiperList()
+      this.getNewList()
+      this.getPersonList()
+      this.getInstitution()
     },
   }
 </script>
