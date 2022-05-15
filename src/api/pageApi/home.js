@@ -8,3 +8,13 @@ export const findDoctorTree = (params) => {
     method:'get',
   })
 }
+
+
+// 查询机构分页
+export const findInstitution = (params) => {
+  return axios({
+    url:'/Institution/listCjhCharactersIntro',
+    method:'get',
+    params
+  })
+}

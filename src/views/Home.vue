@@ -428,6 +428,9 @@
     mounted() {
       this._initSwiper()
       this.getDoctorList()
+      this.$api.home.findInstitution((res) => {
+        console.log(res);
+      })
     },
   }
 </script>

@@ -8,8 +8,8 @@
             <div class="navHeader">
               <img src="../../assets/images/about/u644.png" alt="">
               <div class="card_">
-                <p>组织建设</p>
-                <span>ORGANIZATION</span>
+                <p>分支机构</p>
+                <span>BRANCH</span>
               </div>
             </div>
             <div class="navList active">
